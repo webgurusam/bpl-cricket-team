@@ -1,0 +1,87 @@
+[
+    {
+      "name": "Mushfiqur Rahim",
+      "age": 36,
+      "country": "Bangladesh",
+      "salary": "$75,000",
+      "image": "https://pbs.twimg.com/profile_images/1767090792752115712/ZFk4PHOm_400x400.jpg"
+    },
+    {
+      "name": "Shakib Al Hasan",
+      "age": 37,
+      "country": "Bangladesh",
+      "salary": "$80,000",
+      "image": "https://tds-images.thedailystar.net/sites/default/files/images/2023/10/03/shakib.jpg"
+    },
+    {
+      "name": "Babar Azam",
+      "age": 29,
+      "country": "Pakistan",
+      "salary": "$100,000",
+      "image": "https://www.mykhel.com/thumb/247x100x233/cricket/players/1/5601.jpg"
+    },
+    {
+      "name": "Nicholas Pooran",
+      "age": 28,
+      "country": "West Indies",
+      "salary": "$90,000",
+      "image": "https://cricnepal-media.s3.ap-south-1.amazonaws.com/assets/Nicholas-Pooran-West-Indies-cricketer-110.webp"
+    },
+    {
+      "name": "Tamim Iqbal",
+      "age": 35,
+      "country": "Bangladesh",
+      "salary": "$70,000",
+      "image": "https://static-files.cricket-australia.pulselive.com/headshots/440/544-camedia.png"
+    },
+    {
+      "name": "Mahmudullah",
+      "age": 37,
+      "country": "Bangladesh",
+      "salary": "$65,000",
+      "image": "https://static-files.cricket-australia.pulselive.com/headshots/440/547-camedia.png"
+    },
+    {
+      "name": "Andre Russell",
+      "age": 35,
+      "country": "West Indies",
+      "salary": "$120,000",
+      "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316600/316615.png"
+    },
+    {
+      "name": "Sunil Narine",
+      "age": 36,
+      "country": "West Indies",
+      "salary": "$110,000",
+      "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/320100/320119.png"
+    },
+    {
+      "name": "Mohammad Rizwan",
+      "age": 31,
+      "country": "Pakistan",
+      "salary": "$85,000",
+      "image": "https://api.bdcrictime.com/Profile/mohammad-rizwan-12_10_2023.jpg"
+    },
+    {
+      "name": "Rashid Khan",
+      "age": 25,
+      "country": "Afghanistan",
+      "salary": "$95,000",
+      "image": "https://static-files.cricket-australia.pulselive.com/headshots/440/272-camedia.png"
+    },
+    {
+      "name": "Litton Das",
+      "age": 29,
+      "country": "Bangladesh",
+      "salary": "$60,000",
+      "image": "https://static-files.cricket-australia.pulselive.com/headshots/440/545-camedia.png"
+    },
+    {
+      "name": "Evin Lewis",
+      "age": 32,
+      "country": "West Indies",
+      "salary": "$75,000",
+      "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/320000/320093.png"
+    }
+]
+  
