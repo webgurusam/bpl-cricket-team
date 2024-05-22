@@ -1,7 +1,7 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const Player = ({player, handleAddPlayer}) => {
-    const {id, name, age, country, salary, image} = player;
+    const {name, age, country, salary, image} = player;
     return (
         <div className="card w-64 bg-gradient-to-r from-orange-400 to-yellow-300 shadow-xl pt-3 ">
             <figure>
@@ -21,5 +21,10 @@ const Player = ({player, handleAddPlayer}) => {
         </div>
     );
 };
+
+Player.propTypes = {
+    player: PropTypes.object.isRequired,
+    handleAddPlayer: PropTypes.func.isRequired
+}
 
 export default Player;

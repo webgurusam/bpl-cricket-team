@@ -1,6 +1,6 @@
-import React from 'react';
 import { IoPerson } from "react-icons/io5";
 import { IoMdCheckmarkCircle } from "react-icons/io";
+import PropTypes from 'prop-types';
 
 
 const Cart = ({addedPlayer, totalCost, remainingBalance}) => {
@@ -24,5 +24,11 @@ const Cart = ({addedPlayer, totalCost, remainingBalance}) => {
         </div>
     );
 };
+
+Cart.propTypes = {
+    addedPlayer: PropTypes.array.isRequired,
+    totalCost: PropTypes.number.isRequired,
+    remainingBalance: PropTypes.number.isRequired
+}
 
 export default Cart;

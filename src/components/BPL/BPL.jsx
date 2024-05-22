@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BPL = () => {
     return (
         <div className='bg-gray-200 text-center py-5 space-y-2'>

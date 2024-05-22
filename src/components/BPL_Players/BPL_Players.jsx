@@ -1,7 +1,7 @@
-import React from 'react';
 import { useEffect, useState } from 'react'
 import "./BPL_Players.css";
 import Player from '../Player/Player';
+import PropTypes from 'prop-types';
 
 const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBalance}) => {
     const [players, setPlayers] = useState([]);
@@ -49,15 +49,22 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBal
         <div className='w-2/3'>
             <div className='grid md:grid-cols-3 gap-7'>
                 {
-                    players.map(player => <Player 
-                        key={player.id} 
-                        player={player}
-                        handleAddPlayer={handleAddPlayer}
-                    ></Player>)
+                  players.map(player => <Player 
+                      key={player.id} 
+                      player={player}
+                      handleAddPlayer={handleAddPlayer}
+                  ></Player>)
                 }
             </div>
         </div>
     );
 };
+
+BPL_Players.propTypes = {
+  addedPlayer: PropTypes.array.isRequired,
+  setAddedPlayer: PropTypes.func.isRequired,
+  setTotalCost: PropTypes.func.isRequired,
+  setRemainingBalance: PropTypes.func.isRequired
+}
 
 export default BPL_Players;
