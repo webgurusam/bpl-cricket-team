@@ -1,4 +1,18 @@
 .bpl-players-container{
     background-image: url("../../assets/images/studium.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    position: relative;
+    z-index: 2;
+}
+.bpl-players-container:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    z-index: -1;
+    background-color: #000000;
+    opacity: 0.5;
 }

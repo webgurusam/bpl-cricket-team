@@ -1,4 +1,4 @@
-const BPL = () => {
+const Bpl = () => {
     return (
         <div className='bg-gray-200 text-center py-5 space-y-2'>
             <h1 className='text-4xl text-emerald-500 font-bold'>Bangladesh Premier League</h1>
@@ -7,4 +7,4 @@ const BPL = () => {
     );
 };
 
-export default BPL;
+export default Bpl;
