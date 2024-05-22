@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import "./BPL_Players.css";
 import Player from '../Player/Player';
 
-const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost}) => {
+const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBalance}) => {
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
@@ -33,10 +33,12 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost}) => {
         addedPlayer.forEach(storedPlayer => {
             newTotalCurrentCost = newTotalCurrentCost + parseFloat(storedPlayer.salary);
         })
+        
         if(newTotalCurrentCost > 150000){
           return alert("You haven't sufficient balance!!!")
         }
         else{
+          setRemainingBalance(150000 - newTotalCurrentCost);
           setTotalCost(newTotalCurrentCost);
           setAddedPlayer([...addedPlayer, player]);
         }

@@ -8,7 +8,8 @@ function App() {
 
   const [addedPlayer, setAddedPlayer] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
-  console.log('how much', totalCost)
+  const [remainingBalance, setRemainingBalance] = useState(150000);
+
   return (
     <div className='bpl-players-container'>
         <BPL></BPL>
@@ -17,8 +18,13 @@ function App() {
             addedPlayer={addedPlayer} 
             setAddedPlayer={setAddedPlayer}
             setTotalCost={setTotalCost}
+            setRemainingBalance={setRemainingBalance}
           ></BPL_Players>
-          <Cart addedPlayer={addedPlayer} totalCost={totalCost}></Cart>
+          <Cart 
+            addedPlayer={addedPlayer} 
+            totalCost={totalCost} 
+            remainingBalance={remainingBalance}
+          ></Cart>
         </div>
     </div>
   )

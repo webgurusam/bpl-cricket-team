@@ -3,10 +3,11 @@ import { IoPerson } from "react-icons/io5";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 
 
-const Cart = ({addedPlayer, totalCost}) => {
+const Cart = ({addedPlayer, totalCost, remainingBalance}) => {
     return (
         <div className='w-1/3'>
             <h1 className='font-bold text-xl text-orange-400 flex items-center justify-center'><IoPerson /> Players Added: {addedPlayer.length}</h1>
+            <h1 className='font-bold text-xl text-orange-400 text-center'> Remaining Balance: ${remainingBalance}</h1>
             <h1 className='font-bold text-xl text-orange-400 text-center'> Total Cost: ${totalCost}</h1>
             <div className='space-y-3 mt-4 ml-16'>
                 {
