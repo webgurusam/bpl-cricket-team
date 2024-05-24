@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { TiTick } from "react-icons/ti";
 
 const Player = ({player, handleAddPlayer}) => {
     const {name, age, country, salary, image} = player;
+    const [selectedPlayer, setSelectedPlayer] = useState(false);
+
+    const handleSelectedPlayer = selectedPlayer => {
+        setSelectedPlayer(!selectedPlayer);
+    }
+
     return (
         <div className="card w-[284px] bg-gradient-to-r from-orange-400 to-yellow-300 shadow-xl pt-3 ">
             <figure>
@@ -23,7 +31,10 @@ const Player = ({player, handleAddPlayer}) => {
                     </div>
                 </div>
                 <div className="card-actions justify-center mt-2">
-                <button className="btn btn-info min-h-9 h-9 bg-blue-700 border-none text-white" onClick={() => handleAddPlayer(player)}>Add this player</button>
+                <button disabled={selectedPlayer} className="btn btn-info min-h-9 h-9 bg-blue-700 border-none text-white" onClick={() => {
+                    handleAddPlayer(player) 
+                    handleSelectedPlayer(selectedPlayer)
+                }}>{selectedPlayer ? "Selected Player" : "Add this player"}{selectedPlayer&&<TiTick style={{fontSize: '16px'}} />}</button>
                 </div>
             </div>
         </div>
@@ -32,7 +43,7 @@ const Player = ({player, handleAddPlayer}) => {
 
 Player.propTypes = {
     player: PropTypes.object.isRequired,
-    handleAddPlayer: PropTypes.func.isRequired
+    handleAddPlayer: PropTypes.func.isRequired,
 }
 
 export default Player;
