@@ -3,8 +3,9 @@ import "./BPL_Players.css";
 import Player from '../Player/Player';
 import PropTypes from 'prop-types';
 
-const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBalance}) => {
+const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, remainingBalance, setRemainingBalance}) => {
     const [players, setPlayers] = useState([]);
+    const [currentCost, setCurrentCost] = useState(false);
 
     useEffect(() => {
       const loadPlayersData = async () => {
@@ -33,11 +34,12 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBal
         addedPlayer.forEach(storedPlayer => {
             newTotalCurrentCost = newTotalCurrentCost + parseFloat(storedPlayer.salary);
         })
-        
+
         if(newTotalCurrentCost > 150000){
           return alert("You haven't sufficient balance!!!")
         }
         else{
+          setCurrentCost(currentCost);
           setRemainingBalance(150000 - newTotalCurrentCost);
           setTotalCost(newTotalCurrentCost);
           setAddedPlayer([...addedPlayer, player]);
@@ -53,6 +55,8 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, setRemainingBal
                       key={player.id} 
                       player={player}
                       handleAddPlayer={handleAddPlayer}
+                      currentCost={currentCost}
+                      remainingBalance={remainingBalance}
                   ></Player>)
                 }
             </div>
@@ -64,7 +68,8 @@ BPL_Players.propTypes = {
   addedPlayer: PropTypes.array.isRequired,
   setAddedPlayer: PropTypes.func.isRequired,
   setTotalCost: PropTypes.func.isRequired,
-  setRemainingBalance: PropTypes.func.isRequired
+  remainingBalance: PropTypes.number.isRequired,
+  setRemainingBalance: PropTypes.func.isRequired,
 }
 
 export default BPL_Players;

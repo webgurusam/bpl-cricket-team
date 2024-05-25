@@ -2,12 +2,16 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { TiTick } from "react-icons/ti";
 
-const Player = ({player, handleAddPlayer}) => {
+const Player = ({player, handleAddPlayer, currentCost, remainingBalance}) => {
     const {name, age, country, salary, image} = player;
     const [selectedPlayer, setSelectedPlayer] = useState(false);
 
     const handleSelectedPlayer = selectedPlayer => {
-        setSelectedPlayer(!selectedPlayer);
+        if(remainingBalance >= parseFloat(player.salary)){
+            if(!currentCost){
+                setSelectedPlayer(!selectedPlayer);
+            }
+        }
     }
 
     return (
@@ -34,7 +38,7 @@ const Player = ({player, handleAddPlayer}) => {
                 <button disabled={selectedPlayer} className="btn btn-info min-h-9 h-9 bg-blue-700 border-none text-white" onClick={() => {
                     handleAddPlayer(player) 
                     handleSelectedPlayer(selectedPlayer)
-                }}>{selectedPlayer ? "Selected Player" : "Add this player"}{selectedPlayer&&<TiTick style={{fontSize: '16px'}} />}</button>
+                }}>{selectedPlayer&&<TiTick style={{fontSize: '20px'}} />}{selectedPlayer ? "Selected Player" : "Add this player"}</button>
                 </div>
             </div>
         </div>
@@ -44,6 +48,8 @@ const Player = ({player, handleAddPlayer}) => {
 Player.propTypes = {
     player: PropTypes.object.isRequired,
     handleAddPlayer: PropTypes.func.isRequired,
+    currentCost: PropTypes.number.isRequired,
+    remainingBalance: PropTypes.number.isRequired
 }
 
 export default Player;
