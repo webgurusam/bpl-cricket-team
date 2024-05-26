@@ -2,15 +2,13 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { TiTick } from "react-icons/ti";
 
-const Player = ({player, handleAddPlayer, currentCost, remainingBalance}) => {
+const Player = ({player, handleAddPlayer, remainingBalance}) => {
     const {name, age, country, salary, image} = player;
     const [selectedPlayer, setSelectedPlayer] = useState(false);
 
     const handleSelectedPlayer = selectedPlayer => {
         if(remainingBalance >= parseFloat(player.salary)){
-            if(!currentCost){
-                setSelectedPlayer(!selectedPlayer);
-            }
+            setSelectedPlayer(!selectedPlayer);
         }
     }
 
@@ -48,7 +46,6 @@ const Player = ({player, handleAddPlayer, currentCost, remainingBalance}) => {
 Player.propTypes = {
     player: PropTypes.object.isRequired,
     handleAddPlayer: PropTypes.func.isRequired,
-    currentCost: PropTypes.number.isRequired,
     remainingBalance: PropTypes.number.isRequired
 }
 

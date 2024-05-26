@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, remainingBalance, setRemainingBalance}) => {
     const [players, setPlayers] = useState([]);
-    const [currentCost, setCurrentCost] = useState(false);
 
     useEffect(() => {
       const loadPlayersData = async () => {
@@ -39,7 +38,6 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, remainingBalanc
           return alert("You haven't sufficient balance!!!")
         }
         else{
-          setCurrentCost(currentCost);
           setRemainingBalance(150000 - newTotalCurrentCost);
           setTotalCost(newTotalCurrentCost);
           setAddedPlayer([...addedPlayer, player]);
@@ -55,7 +53,6 @@ const BPL_Players = ({addedPlayer, setAddedPlayer, setTotalCost, remainingBalanc
                       key={player.id} 
                       player={player}
                       handleAddPlayer={handleAddPlayer}
-                      currentCost={currentCost}
                       remainingBalance={remainingBalance}
                   ></Player>)
                 }
